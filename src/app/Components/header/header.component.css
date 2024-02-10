@@ -1,0 +1,13 @@
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+    /* padding: 20px; */
+    padding-left: 15px;
+    display: inline-block;
+    margin-top: -15px;
+    
+}
+.searchField{
+    display: inline-block;
+    margin-left: 250px;
+}

@@ -1,0 +1,11 @@
+.header-nav{
+    text-align: center;
+    display: inline-block;
+    margin-left: 360px;
+}
+a{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    font-weight: 900;
+}
