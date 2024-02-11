@@ -1,11 +1,12 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductComponent } from './product/product.component';
+import { FilterComponent } from './filter/filter.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule,CurrencyPipe,ProductComponent],
+  imports: [CommonModule,CurrencyPipe,ProductComponent,FilterComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -163,4 +164,13 @@ export class ProductListComponent {
       discountedPrice : 2000
     },
   ];
+  totalProducts  = this.productList.length;
+  inStock = this.productList.filter(p => p.is_in_inventory).length;
+  outOfstock = this.productList.filter(p=> !p.is_in_inventory).length;
+
+  selectedFilter:string = 'all';
+
+  onFilterChanged(value:string){
+    this.selectedFilter = value;   
+  }
 }
