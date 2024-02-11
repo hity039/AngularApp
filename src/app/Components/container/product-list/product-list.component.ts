@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
 
@@ -170,7 +170,10 @@ export class ProductListComponent {
 
   selectedFilter:string = 'all';
 
+ @Input() searchText : string = '';
+
   onFilterChanged(value:string){
     this.selectedFilter = value;   
   }
+
 }

@@ -8,9 +8,9 @@
     <span>{{addToCart}}</span>
     <button class="btn btn-primary" (click)="increaseCart()">+</button> -->
 
-    <app-search></app-search>
+    <app-search (SearchTextChanged) = "setSearchText($event)"></app-search>
     <!-- <input [value]="name" type="text" (input)="onNameChange($event);">
     <p>{{name}}</p> -->
 
-    <app-product-list></app-product-list>
+    <app-product-list [searchText] = "searchText"></app-product-list>
 </div>

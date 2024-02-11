@@ -12,25 +12,8 @@ import { ProductListComponent } from './product-list/product-list.component';
   providers:[CurrencyPipe]
 })
 export class ConatinerComponent{
- // name = 'Hitesh';
-  addToCart:number = 0;
-  product:{name:string, price:number,color:string,stock:number,Pimage:string} = {
-    name: 'iPhone',
-    price: 123,
-    color:'Black',
-    stock:10,
-    Pimage:'/assets/Images/iphoneImg.jpg',
-  };
-  // onNameChange($event:any){
-  //   this.name= $event.target.value;
-  // }
-
-  increaseCart(){
-    if(this.addToCart < this.product.stock)
-    this.addToCart++;
-  }
-  decreaseCart(){
-    if(this.addToCart>0)
-    this.addToCart--;
+  searchText:string = '';
+  setSearchText(value:string){
+    this.searchText=value;
   }
 }
