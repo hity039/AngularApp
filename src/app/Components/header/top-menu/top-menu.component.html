@@ -1,6 +1,3 @@
 <div class="top-menu">
-    <a href="#">Help</a>
-    <a href="#">Exchange & Returns</a>
-    <a href="#">Order Tracking</a>
-    <a href="#">SignUp/Login</a>
+    <a *ngFor="let item of topMenuComponents" href="#">{{item}}</a>
 </div>

@@ -1,0 +1,6 @@
+<div class="search-product">
+    <input class="search-product-input" [(ngModel)] = "searchText" />
+    <button [ngClass]="{'search-product-button':searchText,'btn-search-disabled':!searchText}" [disabled]="!searchText">Search</button>
+</div>
+<div class="search-result-for"><p *ngIf="searchText.length > 0" ><strong>Search result for :- </strong>{{searchText}}</p></div>
+<!-- <div class="product-container-header"><h2>Shoes</h2></div> -->
