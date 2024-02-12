@@ -2,7 +2,7 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
-
+import {Product} from '../../../Models/Product';
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -14,6 +14,7 @@ export class ProductListComponent {
   constructor(currency : CurrencyPipe){
 
   }
+  selectedProduct:Product;
    productList = [
     {
       id: 1,
@@ -34,7 +35,6 @@ export class ProductListComponent {
       id: 2,
       name: "Noise Pulse Go",
       img: "https://m.media-amazon.com/images/I/61akt30bJsL._SL1500_.jpg",
-      amt: 1300,
       seller: "Noise Store",
       category: "Watch",
       stock:100,
@@ -49,7 +49,6 @@ export class ProductListComponent {
       id: 3,
       name: "boAt Xtend Pro",
       img: "https://m.media-amazon.com/images/I/61ZuL8CUigL._SL1500_.jpg",
-      amt: 2799,
       seller: "Rajesh Watchs",
       category: "Watch",
       stock:40,
@@ -63,7 +62,6 @@ export class ProductListComponent {
       id: 4,
       name: "Lenovo Tab M8",
       img: "https://m.media-amazon.com/images/I/71SvqTFPXJL._SL1500_.jpg",
-      amt: 9270,
       seller: "Stonehenge Retail",
       category: "Tablets",
       stock:5,
@@ -77,7 +75,6 @@ export class ProductListComponent {
       id: 5,
       name: "Honor PAD X8",
       img: "https://m.media-amazon.com/images/I/710G-VKcgtL._SL1500_.jpg",
-      amt: 12999,
       seller: "Honor india",
       category: "Tablets",
       stock:20,
@@ -92,7 +89,6 @@ export class ProductListComponent {
       id: 6,
       name: "IKALL N9 ",
       img: "https://m.media-amazon.com/images/I/7185GL6hPlL._SL1500_.jpg",
-      amt: 3999,
       seller: "IKALL Store",
       category: "Tablets",
       stock:10,
@@ -108,7 +104,6 @@ export class ProductListComponent {
       id: 7,
       name: "Oppo Pad Air",
       img: "https://m.media-amazon.com/images/I/513FD4w8hGL._SL1500_.jpg",
-      amt: 15999,
       seller: "Oppo Store",
       category: "Tablets",
       stock:50,
@@ -122,7 +117,6 @@ export class ProductListComponent {
       id: 8,
       name: "Acer EK220Q",
       img: "https://m.media-amazon.com/images/I/8150iUXkc5L._SL1500_.jpg",
-      amt: 6249,
       seller: "Accer Store",
       category: "Monitors",
       stock:30,
@@ -137,7 +131,6 @@ export class ProductListComponent {
       id: 9,
       name: "Samsung 24",
       img: "https://m.media-amazon.com/images/I/81TjRLHaz1L._SL1500_.jpg",
-      amt: 9799,
       seller: "Samsung Store",
       category: "Monitors",
       stock:1,
@@ -152,7 +145,6 @@ export class ProductListComponent {
       id: 10,
       name: "ZEBRONICS AC32FHD ",
       img: "https://m.media-amazon.com/images/I/813Y1TIZwfL._SL1500_.jpg",
-      amt: 12799,
       seller: "ZEBRONICS Store",
       category: "Monitors",
       stock:18,

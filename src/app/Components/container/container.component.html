@@ -12,5 +12,6 @@
     <!-- <input [value]="name" type="text" (input)="onNameChange($event);">
     <p>{{name}}</p> -->
 
-    <app-product-list [searchText] = "searchText"></app-product-list>
+    <app-product-list [searchText] = "searchText" #ProductListComponent></app-product-list>
+    <app-product-detail *ngIf = "ProductListComponent.selectedProduct"></app-product-detail>
 </div>
