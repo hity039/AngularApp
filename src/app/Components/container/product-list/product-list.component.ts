@@ -26,7 +26,7 @@ export class ProductListComponent {
       price:4400,
       description: `This is a limited edition Fire Boltt ninja watch. It comes with a built in blaster and can shoot fire at will.`,
       is_in_inventory:true,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
       discountedPrice : 2000
     },
@@ -41,7 +41,7 @@ export class ProductListComponent {
       price:2000,
       description: `This is a small watch with noise pulse effect. It has a black leather strap and can be customized in different colors.`,
       is_in_inventory:false,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
   
@@ -55,7 +55,7 @@ export class ProductListComponent {
       price:8000,
       description: `The Boat XTEND PRO is a stylish and comfortable watch that will keep you on track with its sleek design and water resistant features`,
       is_in_inventory:true,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
     {
@@ -68,7 +68,7 @@ export class ProductListComponent {
       price:7000,
       description: `The Lenovo Tab M8 features a 10.1 inch Super AMOLED display with a resolution of 2346 x 1682 pixels and an aspect`,
       is_in_inventory:true,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
     {
@@ -81,7 +81,7 @@ export class ProductListComponent {
       price:6000,
       description: "This tablet has a large screen and runs on android os.",
       is_in_inventory:true,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
   
@@ -95,7 +95,7 @@ export class ProductListComponent {
       price:5000,
       description: "The IKALL N9 is lightweight and waterproof with an IP68 rating for dust and salt resistance.",
       is_in_inventory:false,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
       discountedPrice : 2000
     },
@@ -110,7 +110,7 @@ export class ProductListComponent {
       price:10000,
       description: "This tablet comes with a stylus for drawing or writing.",
       is_in_inventory:false,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
     {
@@ -123,7 +123,7 @@ export class ProductListComponent {
       price:20000,
       description: "This monitor is perfect for watching movies or playing games.",
       is_in_inventory:false,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
       discountedPrice : 2000
     },
@@ -137,7 +137,7 @@ export class ProductListComponent {
       price:25000,
       description: "The largest screen in the series! Perfect for working from home.",
       is_in_inventory:true,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
     },
   
@@ -151,7 +151,7 @@ export class ProductListComponent {
       price:5000,
       description: "Great for gaming and streaming!",
       is_in_inventory:false,
-      color:["Black","White", "Red"],
+      color:["Black","Blue", "Red"],
       size:["S","M","L"],
       discountedPrice : 2000
     },

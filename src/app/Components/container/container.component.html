@@ -13,5 +13,5 @@
     <p>{{name}}</p> -->
 
     <app-product-list [searchText] = "searchText" #ProductListComponent></app-product-list>
-    <app-product-detail *ngIf = "ProductListComponent.selectedProduct"></app-product-detail>
+    <app-product-detail *ngIf = "ProductListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>
 </div>

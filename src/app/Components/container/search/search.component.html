@@ -1,7 +1,7 @@
 <div class="search-product">
     <!-- <input class="search-product-input" [(ngModel)] = "searchText" (input)="onSearchTextChanged()" /> -->
     <input class="search-product-input" #searchInput/>
-    <button class="btn search-product-button" (click)="onSearchClick(searchInput)">Search</button>
+    <button class="btn search-product-button" (click)="onSearchClick()">Search</button>
 </div>
 <div class="search-result-for"><p *ngIf="searchText.length > 0" ><strong>Search result for :- </strong>{{searchText}}</p></div>
 <!-- <div class="product-container-header"><h2>Shoes</h2></div> -->

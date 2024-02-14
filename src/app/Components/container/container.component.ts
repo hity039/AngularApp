@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -14,6 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 })
 export class ConatinerComponent{
   searchText:string = '';
+  @ViewChild(ProductListComponent) productListComponent : ProductListComponent ;
   setSearchText(value:string){
     this.searchText=value;
   }
