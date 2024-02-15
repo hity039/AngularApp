@@ -1,17 +1,28 @@
 <div class="container">
-    <!-- <img [src]="product.Pimage" alt="No-image" width="10%" height="10%"/>
-    <p>Name : {{product.name}}</p>
-    <p>Price: {{product.price}} </p>
-    <p>Color: {{product.color}}</p>
-    <p>{{product.stock  > 0 ? 'In Stock ' +product.stock + ' items left' : 'Out of Stock' }}</p>
-    <button class="btn btn-primary" (click)="decreaseCart()">-</button>
-    <span>{{addToCart}}</span>
-    <button class="btn btn-primary" (click)="increaseCart()">+</button> -->
-
     <app-search (SearchTextChanged) = "setSearchText($event)"></app-search>
-    <!-- <input [value]="name" type="text" (input)="onNameChange($event);">
-    <p>{{name}}</p> -->
-
     <app-product-list [searchText] = "searchText" #ProductListComponent></app-product-list>
     <app-product-detail *ngIf = "ProductListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>
+    <div class="featured-products">
+        <div class="featured-product-heading">
+            <h1 style="font-weight: 900;">Latest arrival in popular brands</h1>
+        </div>
+        <app-featured-brands>
+            <h3 class="title" style="font-weight: 900;">
+            New arrivals in Mobile Phones
+        </h3>
+        <button class="call-to-action">Show new arrivals in Mobile</button>
+    </app-featured-brands>     
+        <app-featured-brands>
+            <h3 class="title"style="font-weight: 900;">
+            New arrivals in Desktop
+           </h3>
+           <button class="call-to-action">Show new arrivals in Desktop</button>
+    </app-featured-brands>     
+        <app-featured-brands>
+            <h3 class="title" style="font-weight: 900;">
+            New arrivals in SmartWatches
+             </h3>
+        <button class="call-to-action">Show new arrivals in SmartWatches</button>
+    </app-featured-brands>     
+    </div>
 </div>

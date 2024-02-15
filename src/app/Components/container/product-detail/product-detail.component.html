@@ -49,7 +49,12 @@
         </div>
     </div>
     <div class="ekart-product-detail-addtoCart">
-        <button class="btn-add-to-cart">ADD TO CART</button>
+        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory;else NotifyMe ">ADD TO CART</button>
+       <!-- When we want to use ng-template we have to  put the template in curly braces and give it a reference variable.
+       and use *ngtemplateOutlet and assign the template reference variable -->
+        <ng-template #NotifyMe>
+            <button class="btn-add-to-cart">Notify Me</button>
+        </ng-template>
     </div>
 </div>
 <div class="overlay"></div>
