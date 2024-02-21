@@ -11,8 +11,9 @@
             <h2>{{product.name}}</h2>
         </div>
         <div class="ekart-product-detail-gbc">
-            <span>{{product.seller}}</span>
-            <span>{{product.category}}</span>
+            <!-- <span  [setBackground] [backColor]="'darkgrey'" >{{product.seller}}</span> -->
+            <span [setBackground]="{textColor : 'white' , backColor:'darkgrey'}" >{{product.seller}}</span>
+            <span [setBackground]="{textColor : 'white' , backColor:'darkgrey'}"> {{product.category}}</span>
         </div>
         <div class="ekart-product-detail-price">
             <p>
@@ -25,18 +26,18 @@
             <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
                 <h4>Available Size</h4>
             </div>
-            <diV style="margin-top: 20px">
-                <span class="ekart-product-detail-available-size" *ngFor="let item of product.size">{{item}}</span>
-            </diV>                
+            <div style="margin-top: 20px;">@for (item of product.size; track $index){
+                <span style="margin-right: 5px;" class="ekart-product-detail-available-size">{{item}}</span> }
+            </div>
         </div>
 
         <div class="ekart-product-detail-color">
             <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
                 <h4>Available Color</h4>
             </div>
-            <diV style="margin-top: 20px;">
+            <div style="margin-top: 20px;">
                 <span class="ekart-product-detail-available-color" [ngStyle]="{'background-color' : item}" *ngFor="let item of product.color"></span>
-                </diV>                
+                </div>                
         </div>
 
         <div class="ekart-product-detail-desc">
@@ -45,11 +46,11 @@
             </div>
             <div style="margin-top: 20px">
                 <p>{{product.description}}</p>
-            </div>                
+            </div>             
         </div>
     </div>
-    <div class="ekart-product-detail-addtoCart">
-        <button class="btn-add-to-cart" *ngIf="product.is_in_inventory;else NotifyMe ">ADD TO CART</button>
+    <div class="ekart-product-detail-addtoCart" >
+        <button class="btn-add-to-cart" appHover *ngIf="product.is_in_inventory;else NotifyMe">ADD TO CART</button>
        <!-- When we want to use ng-template we have to  put the template in curly braces and give it a reference variable.
        and use *ngtemplateOutlet and assign the template reference variable -->
         <ng-template #NotifyMe>
@@ -58,3 +59,5 @@
     </div>
 </div>
 <div class="overlay"></div>
+
+<!-- @if(testing){User logged in } @else{User not logged in } -->
