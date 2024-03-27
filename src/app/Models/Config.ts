@@ -1,0 +1,1 @@
+export const api_url = "http://localhost:5223/api/Book/GetCollection";

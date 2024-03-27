@@ -19,4 +19,5 @@ export class ConatinerComponent{
   setSearchText(value:string){
     this.searchText=value;
   }
+  
 }

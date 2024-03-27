@@ -1,4 +1,4 @@
-<div class="product-item" appHighlight>
+<div class="product-item" appHighlight [DisableProduct] = "!product.is_in_inventory" >
     <div class="wishlist-sale-conatiner">
         <div class="add-to-wishlist">
             <i class="fa-regular fa-heart" aria-hidden="true"></i>

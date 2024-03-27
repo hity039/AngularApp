@@ -20,4 +20,7 @@ export class ProductDetailComponent {
     console.log("Product:-" + this.productListComp.selectedProduct);
     this.product = this.productListComp.selectedProduct;
   }
+  hideProductDetail(){
+    this.productListComp.selectedProduct = null;
+  }
 }
