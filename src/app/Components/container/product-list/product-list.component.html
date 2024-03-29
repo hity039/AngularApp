@@ -1,4 +1,5 @@
 <app-filter [all]="totalProducts" [inStock]="inStock" [outOfStock]="outOfstock" (selectedRadioButtonChanged) = "onFilterChanged($event)"></app-filter>
+<app-loader *ngIf="isLoading"></app-loader>
 <div class="product-container">
     <ng-container *ngFor="let prod of productList">
         <!-- <app-product [product]="prod" *ngIf="selectedFilter === 'all' || prod.is_in_inventory.toString() === selectedFilter"></app-product> -->

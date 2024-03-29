@@ -7,10 +7,11 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
 import { api_url } from '../../../Models/Config';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductListService } from '../../../Services/product-list.service';
+import { LoaderComponent } from '../../../Utility/loader/loader.component';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule,CurrencyPipe,ProductComponent,FilterComponent],
+  imports: [CommonModule,CurrencyPipe,ProductComponent,FilterComponent,LoaderComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
   providers : [HttpClientModule,HttpClient]
@@ -22,9 +23,13 @@ export class ProductListComponent {
   productService : ProductListService = inject(ProductListService);
   selectedProduct:Product;
   productList : any = [];
+  isLoading: boolean = false;
   ngOnInit(){
-  this.productService.getProductList().subscribe(data =>{
+    this.isLoading = true;
+   this.productService.getProductList().subscribe(data =>{
+   
     this.productList = data;
+    this.isLoading = false;
   });
   console.log("Product List is : " + this.productList);
   

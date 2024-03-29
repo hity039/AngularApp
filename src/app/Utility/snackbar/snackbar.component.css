@@ -1,0 +1,97 @@
+/* .snackbar-container {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px 24px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  
+  .snackbar-container.hidden {
+    opacity: 0;
+  }
+  
+  .snackbar-message {
+    margin-right: auto;
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .snackbar-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .snackbar-action-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .snackbar-action-button:hover {
+    color: rgba(255, 255, 255, 0.8);
+  } */
+
+
+  .sb {
+    min-width: 350px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    border-radius: 5px;
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    top: 40px; /* 30px from the bottom */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  .sb-error{
+    background-color: #E74C3C; /* Black background color */
+    color: #fff; /* White text color */
+  }
+
+  .sb-success{
+    background-color: #1ABC9C; /* Black background color */
+    color: #28282B; /* White text color */
+  }
+
+  /* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 40px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 40px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }

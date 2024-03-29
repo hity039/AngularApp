@@ -1,7 +1,8 @@
 <div class="top-menu">
     <!-- <a *ngFor="let item of topMenuComponents" href="#">{{item}}</a> -->
-    <a href="#">Help</a>
+    <a href="#" *ngIf="!isLoggedIn">Help</a>
     <a href="#">Exchange & Returns</a>
     <a href="#">Order Tracking</a>
-    <a routerLink = "Login" href="#">Login</a>
+    <a *ngIf="!isLoggedIn" routerLink = "Login" href="#">Login</a>
+    <a *ngIf="isLoggedIn" (click) = "logOut()">LogOut</a>
 </div>

@@ -6,9 +6,10 @@ import { NotfoundComponent } from './Components/container/notfound/notfound.comp
 import { ConatinerComponent } from './Components/container/container.component';
 import { AppComponent } from './app.component';
 import { MainComponentComponent } from './Components/container/main-component/main-component.component';
+import { AuthGuard } from './Services/authguard.service';
 
 export const routes: Routes = [
     {path : '' , component : MainComponentComponent},
-    {path : 'Login' , component : LoginComponent},
-    {path : '**' ,component : NotfoundComponent}
+    {path : 'Login' , component : LoginComponent },
+    {path : '**' , component : NotfoundComponent}
 ];

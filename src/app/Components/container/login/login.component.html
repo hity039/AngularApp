@@ -1,10 +1,28 @@
   <div class="container">
     <div class="login-form">
-      <h1>Login</h1>
-      <form>
-        <input type="text" name="username" placeholder="Username" />
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="Login" />
+      <app-snackbar [message]="errorMessage" *ngIf="errorMessage" [isHidden]="isSnackBarHidden"></app-snackbar>
+      <h1>{{isLoginMode ? 'Login' : 'Signup'}}</h1>
+      <app-loader *ngIf="isLoading"></app-loader>
+      <form [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted() " >
+        <div>
+        <input type="text" name="email" placeholder="Email" formControlName="email" />
+        <small *ngIf="reactiveForm.get('email').errors?.['required'] && reactiveForm.get('email').touched">
+          *Email is a required field.
+        </small>
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="Password" formControlName="password" />
+        <small *ngIf="reactiveForm.get('password').errors?.['required'] && reactiveForm.get('password').touched">
+          *Password is a required field.
+        </small>
+      </div> 
+      <button type="submit" [disabled]="reactiveForm.invalid">{{isLoginMode ? 'Login' : 'Signup'}}</button>
+        <!-- <input type="submit" value="Login" /> -->
+        <p class="toggle-text">{{isLoginMode ? 'Do not have an accout yet?' : 'Already have an account?'}}
+          <a class="toggle-link"
+              (click)="onSwitchMode()"
+          >{{isLoginMode ? 'Register Here.' : 'Login Here'}}</a>
+      </p>
       </form>
     </div>
   </div>
