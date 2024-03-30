@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit , inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../Services/auth.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { AuthResponse } from '../../../Models/AuthResponse';
 import { Router } from '@angular/router';
 import { LoaderComponent } from '../../../Utility/loader/loader.component';
@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
   router : Router = inject(Router);
   isLoading: boolean = false;
   errorMessage: string | null = null;
-  isSnackBarHidden : boolean = true;
+  isSnackBarHidden : boolean = false;
+  show = new Subject<boolean>();
   ngOnInit(){
     this.reactiveForm = new FormGroup({
       email : new FormControl(null,[Validators.required,Validators.email]),
@@ -60,6 +61,7 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
         if(res.email == "Email already registered !!" || res.email == "Email is not registered. Please Sign Up !!" || res.email == "Email or Password is not correct" ){
           this.isSnackBarHidden = false;
+          //this.show.next(false);
           this.errorMessage = res.email;
         }
         else{
@@ -73,4 +75,5 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+
 }

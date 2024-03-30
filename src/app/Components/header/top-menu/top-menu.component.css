@@ -6,6 +6,8 @@ a{
     text-decoration: none;
     margin-right: 10px;
     color: black;
-    font-weight: 900;
-    
+    font-weight: 900;   
+}
+.logout-link{
+    cursor: pointer;
 }

@@ -4,5 +4,5 @@
     <a href="#">Exchange & Returns</a>
     <a href="#">Order Tracking</a>
     <a *ngIf="!isLoggedIn" routerLink = "Login" href="#">Login</a>
-    <a *ngIf="isLoggedIn" (click) = "logOut()">LogOut</a>
+    <a class="logout-link" *ngIf="isLoggedIn" (click) = "logOut()">LogOut</a>
 </div>

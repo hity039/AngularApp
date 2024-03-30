@@ -1,0 +1,59 @@
+.message-sent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    height: 100%;
+  }
+  
+  .message-sent-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .message-sent-image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-top: 2rem;
+  }
+  
+  .message-sent-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 5s linear infinite;
+  }
+  
+  .rotating-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ddd;
+    clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .message-sent-container {
+      padding: 3rem 1rem;
+    }
+  
+    .message-sent-image-container {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .rotating-background {
+      clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+    }
+  }

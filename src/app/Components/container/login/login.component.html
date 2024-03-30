@@ -1,7 +1,7 @@
   <div class="container">
     <div class="login-form">
       <app-snackbar [message]="errorMessage" *ngIf="errorMessage" [isHidden]="isSnackBarHidden"></app-snackbar>
-      <h1>{{isLoginMode ? 'Login' : 'Signup'}}</h1>
+      <h2>{{isLoginMode ? 'Login' : 'Signup'}}</h2>
       <app-loader *ngIf="isLoading"></app-loader>
       <form [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted() " >
         <div>

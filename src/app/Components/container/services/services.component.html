@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="services-container">
+      <h1 class="services-header">Our Services</h1>
+      <div class="services-cards-container">
+        <div class="service-card" *ngFor="let service of services">
+          <img class="service-card-image" [src]="service.imageUrl" alt="{{ service.title }}">
+          <h2 class="service-card-title">{{ service.title }}</h2>
+          <p class="service-card-description">{{ service.description }}</p>
+          <a class="service-card-cta">  
+            <!-- [routerLink]="service.ctaUrl -->
+            {{ service.ctaText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

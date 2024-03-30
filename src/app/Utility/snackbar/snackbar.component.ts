@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component ,DoCheck,Input, OnInit } from '@angular/core';
+import { Component ,Input, OnChanges, OnInit,  } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-snackbar',
@@ -8,25 +9,32 @@ import { Component ,DoCheck,Input, OnInit } from '@angular/core';
   templateUrl: './snackbar.component.html',
   styleUrl: './snackbar.component.css'
 })
-export class SnackbarComponent {
+export class SnackbarComponent implements OnInit , OnChanges {
    @Input() message: string;
-    @Input() isHidden : Boolean = true;
+   @Input() isHidden : Boolean = true;
+  //checkVisiblity : Observable<boolean>;
 
-  //isHidden = false;
-  // ngOnInit(): void {
-  //   alert(this.isHidden);
-  // }
-  // ngDoCheck() {
-  //   setTimeout(() => {
-  //     this.isHidden = true;
-  //   }, 5000);
-  // }
-
-  ngAfterViewInit(): void {
+  constructor() {
+    
+  }
+  ngOnInit(): void {
+    console.log("Is Hidden : " + this.isHidden);
     if (!this.isHidden) {
       setTimeout(() => {
+        console.log("Is Hidden inside : " + this.isHidden);
         this.isHidden = true;
       }, 5000);
+    }
+  }
+
+  //this.checkVisiblity = Observable.of(this.isHidden);
+  ngOnChanges(): void {
+    console.log("Is Hidden : " + this.isHidden);
+    if (this.isHidden) {     
+        this.isHidden = false;
+        setTimeout(() => {
+          this.isHidden = true;
+        },4000);
     }
   }
 }
