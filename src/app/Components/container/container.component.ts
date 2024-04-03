@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
+import { ScrollerComponent } from '../../Utility/scroller/scroller.component';
 
 @Component({
   selector: 'app-container',
   standalone: true,
-  imports: [SearchComponent,ProductListComponent,ProductDetailComponent,CommonModule,FeaturedBrandsComponent,AboutComponent,ContactComponent,ServicesComponent],
+  imports: [SearchComponent,ProductListComponent,ProductDetailComponent,CommonModule,FeaturedBrandsComponent,AboutComponent,ContactComponent,ServicesComponent,ScrollerComponent],
   templateUrl: './container.component.html',
   styleUrl: './container.component.css',
   providers:[CurrencyPipe]

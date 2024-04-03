@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output  , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-thanks',
@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './thanks.component.css'
 })
 export class ThanksComponent {
-
+  @Output() closeThanks = new EventEmitter<boolean>();
+  hideThanks(){
+    this.closeThanks.emit(false);
+  }
 }

@@ -68,3 +68,7 @@
     width: 80%;
     margin-left: 100px;
   }
+  small{
+    color: red;
+    font-weight: bold;
+  }

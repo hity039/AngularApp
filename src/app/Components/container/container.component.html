@@ -1,4 +1,5 @@
 <div class="container">
+    <!-- <app-scroller></app-scroller> -->
     <app-search (SearchTextChanged) = "setSearchText($event)"></app-search>
     <app-product-list [searchText] = "searchText" #ProductListComponent></app-product-list>
     <app-product-detail *ngIf = "ProductListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>
@@ -34,4 +35,5 @@
     <section id="contact">
         <app-contact></app-contact>
     </section>
+  
 </div>

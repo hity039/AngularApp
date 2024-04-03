@@ -1,5 +1,6 @@
 <div class="main-div">
-  <app-thanks *ngIf="showThanks"></app-thanks>
+  <app-thanks *ngIf="showThanks" (closeThanks)="hideThanks();"></app-thanks>
+  <app-snackbar *ngIf="showSnackbar" [message]="snackbarMessage"></app-snackbar>
 <div class="contact-us-container">
     <div class="contact-us-header">
       <h1>Contact Us</h1>
@@ -8,21 +9,30 @@
         will get back to you as soon as possible.
       </p>
     </div>
-    <form class="contact-us-form">
+    <form class="contact-us-form" [formGroup]="contactForm" (ngSubmit)="onFormSubmitted()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" class="form-control" required>
+        <input type="text" id="name" class="form-control" formControlName="name"/>
+        <small *ngIf="contactForm.get('name').errors?.['required'] && contactForm.get('name').touched">
+          *Name is a required field.
+        </small>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" class="form-control" required>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <small *ngIf="contactForm.get('email').errors?.['email'] && contactForm.get('email').errors?.['required'] && contactForm.get('email').touched">
+          *Email is a required field.
+        </small>
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" class="form-control" rows="5" required></textarea>
+        <textarea id="message" class="form-control" rows="5" formControlName="message"></textarea>
+        <small *ngIf="contactForm.get('message').errors?.['required'] && contactForm.get('message').touched">
+          *Message is a required field.
+        </small>
       </div>
       <button type="submit" class="btn btn-primary">
-        Send Message
+        Submit
       </button>
     </form>
   </div>
