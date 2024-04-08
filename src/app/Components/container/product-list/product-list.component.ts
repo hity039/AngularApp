@@ -4,7 +4,6 @@ import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
 import {Product} from '../../../Models/Product';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
-import { api_url } from '../../../Models/Config';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductListService } from '../../../Services/product-list.service';
 import { LoaderComponent } from '../../../Utility/loader/loader.component';
