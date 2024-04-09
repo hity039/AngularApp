@@ -17,4 +17,6 @@ constructor(currency : CurrencyPipe) {
 }
   @Input()
   product?:Product;
+
+  
 }
